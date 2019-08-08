@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "es6",
+      "es7",
+      "es2017",
+      "dom"
+    ],
+    "module": "umd",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "jsx": "react"
+  },
+  "exclude": [
+    "coverage",
+    "**/__tests__/*"
+  ]
+}
