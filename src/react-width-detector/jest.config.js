@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'react-element-width-detector',
+  displayName: 'react-width-detector',
   testEnvironment: 'node',
   resetMocks: true,
   rootDir: './',

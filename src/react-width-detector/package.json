@@ -1,5 +1,5 @@
 {
-  "name": "react-element-width-detector",
+  "name": "react-width-detector",
   "version": "0.0.1",
   "description": "Detects an elements width using React Context",
   "author": "Jeffry Wainwright <yowainwright@gmail.com>",
@@ -15,6 +15,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "lodash.debounce": "^4.0.8"
   }
 }
-
