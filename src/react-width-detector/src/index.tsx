@@ -1,10 +1,11 @@
-import React, { createContext, useEffect, useState, ReactChild } from "react";
+import React, { createContext, FunctionComponent, useEffect, useState, ReactChild } from "react";
 import debounce from "lodash.debounce";
 
 /**
- * React Width Selector
+ * React Width Detector
  * ---
  * select element or use default window
+ * get the width of an element or window
  * @param {child} react child element
  * @param {singleElement} string that is selected via `querySelectorAll`
  * @returns {reactElement}
@@ -21,11 +22,12 @@ export interface WidthProviderProps {
 
 const { Provider, Consumer } = createContext<Context>({ width: 0});
 
-export const WidthProvider = ({ children, element }): JSX.Element => {
+export const WidthProvider: FunctionComponent<WidthProviderProps> = ({ children, singleElement }): JSX.Element => {
   const [width, setWidth] = useState(0);
-  const el = element ? document.querySelectorAll(element)[0] : window
+  const el: any = singleElement ? document.querySelectorAll(singleElement)[0]  : window
+  const elWidth = el !== window ? el.offsetWidth : el.innerWidth
   useEffect(() => {
-    const handleResize = () => setWidth(el.innerWidth);
+    const handleResize = () => setWidth(elWidth);
     handleResize();
     el.addEventListener("resize", debounce(handleResize));
     return () => el.removeEventListener("resize", debounce(handleResize));
