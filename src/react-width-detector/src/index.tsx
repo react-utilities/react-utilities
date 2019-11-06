@@ -1,5 +1,5 @@
-import React, { createContext, FunctionComponent, useEffect, useState, ReactChild } from "react";
-import debounce from "lodash.debounce";
+import React, { createContext, FunctionComponent, ReactChild, useEffect, useState } from 'react';
+import debounce from 'lodash.debounce';
 
 /**
  * React Width Detector
@@ -12,25 +12,25 @@ import debounce from "lodash.debounce";
  */
 
 export interface Context {
-  width: number
+  width: number;
 }
 
 export interface WidthProviderProps {
-  children: (props: any) => ReactChild
-  singleElement?: string | null | undefined
+  children: (props: any) => ReactChild;
+  singleElement?: string | null | undefined;
 }
 
-const { Provider, Consumer } = createContext<Context>({ width: 0});
+const { Provider, Consumer } = createContext<Context>({ width: 0 });
 
 export const WidthProvider: FunctionComponent<WidthProviderProps> = ({ children, singleElement }): JSX.Element => {
   const [width, setWidth] = useState(0);
-  const el: any = singleElement ? document.querySelectorAll(singleElement)[0]  : window
-  const elWidth = el !== window ? el.offsetWidth : el.innerWidth
+  const el: any = singleElement ? document.querySelectorAll(singleElement)[0] : window;
+  const elWidth = el !== window ? el.offsetWidth : el.innerWidth;
   useEffect(() => {
     const handleResize = () => setWidth(elWidth);
     handleResize();
-    el.addEventListener("resize", debounce(handleResize));
-    return () => el.removeEventListener("resize", debounce(handleResize));
+    el.addEventListener('resize', debounce(handleResize));
+    return () => el.removeEventListener('resize', debounce(handleResize));
   }, [debounce]);
 
   return <Provider value={{ width }}>{children}</Provider>;

@@ -4,6 +4,8 @@ React Utilities to speed up and simplify development 🏎
 
 The goal of the project is to provide everyday components, in example window scroll detection, to speed up and simplify React development with little to no extra boilerplate code. In this eco-system/monorepo, everyday React utilities can be implemented and tested so that users of this repository's utilities can use the provided utilities with confidence and without much thought.
 
+----
+
 ## Usage
 
 In this section, how to use specific React Utilities will be supplied.
@@ -16,6 +18,8 @@ const SomeReactComponent: FunctionComponent<SomeReactComponentProps> = (): JSX.E
   (<SomeReactUtility><p>Foo</p></SomeReactUtility>)
 
 ```
+
+----
 
 ## Development
 
@@ -50,6 +54,8 @@ Shortcut for `jest`. You can pass any `jest` CLI flags to this command like `--w
 #### `tsc`
 
 Runs a `noEmit` Typescript check across all files.
+
+----
 
 ## Thanks
 

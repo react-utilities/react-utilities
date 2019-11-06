@@ -1,5 +1,5 @@
-import React, { createContext, FunctionComponent, useEffect, useState, ReactChild } from "react";
-import debounce from "lodash.debounce";
+import debounce from 'lodash.debounce';
+import React, { createContext, FunctionComponent, useEffect, useState } from 'react';
 
 /**
  * React Vertical Scroll Distance Detector
@@ -12,29 +12,32 @@ import debounce from "lodash.debounce";
  */
 
 export interface Context {
-  verticalScrollDistance: number
+  verticalScrollDistance: number;
 }
 
 export interface VerticalScrollDistanceProviderProps {
-  children: (props: any) => ReactChild
-  singleElement?: string | null | undefined
+  children: any;
+  singleElement?: string | null | undefined;
 }
 
-const { Provider, Consumer } = createContext<Context>({ verticalScrollDistance: 0});
+const { Provider, Consumer } = createContext<Context>({ verticalScrollDistance: 0 });
 
-export const VerticalScrollDistanceProvider: FunctionComponent<VerticalScrollDistanceProviderProps> = ({ children, singleElement }) => {
+export const VerticalScrollDistanceProvider: FunctionComponent<VerticalScrollDistanceProviderProps> = ({
+  children,
+  singleElement
+}) => {
   const [verticalScrollDistance, setVerticalScrollDistance] = useState(0);
-  const el = singleElement ? document.querySelectorAll(singleElement)[0] : window
+  const el = singleElement ? document.querySelectorAll(singleElement)[0] : window;
   useEffect(() => {
     const handleScroll = () => setVerticalScrollDistance(window.scrollY);
     handleScroll();
-    window.addEventListener("scroll", debounce(handleScroll));
-    return () => window.removeEventListener("scroll", debounce(handleScroll));
+    el.addEventListener('scroll', debounce(handleScroll));
+    return () => el.removeEventListener('scroll', debounce(handleScroll));
   }, [debounce]);
 
   return <Provider value={{ verticalScrollDistance }}>{children}</Provider>;
 };
 
-export const VerticalScrollDistanceConsumer = Consumer;
+export const VerticalScrollDistanceConsumer: any = Consumer;
 
 export const WidthConsumer = Consumer;
