@@ -1,4 +1,4 @@
-const runYarnLock = 'yarn install --frozen-lockfile';
+const runYarnLock = 'yarn install --frozen-lockfile'
 
 module.exports = {
   hooks: {
@@ -7,4 +7,4 @@ module.exports = {
     'post-rebase': 'yarn install',
     'pre-commit': 'yarn tsc && yarn lint-staged'
   }
-};
+}
