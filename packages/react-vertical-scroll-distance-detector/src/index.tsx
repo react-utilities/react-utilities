@@ -47,5 +47,3 @@ export const VerticalScrollDistanceProvider: FunctionComponent<
 }
 
 export const VerticalScrollDistanceConsumer: any = Consumer
-
-export const WidthConsumer = Consumer

@@ -43,6 +43,6 @@ Commands for developing React Utilities
 
 ## Thanks
 
-This project is being built referencing [Paul Armstrong](https://github.com/paularmstrong)'s [Monorepo TS](https://github.com/paularmstrong/monorepo-ts) with additions for better react development supplied by me, Jeff Wainwright.
+This project is being built referencing [Paul Armstrong](https://github.com/paularmstrong)'s [Monorepo TS](https://github.com/paularmstrong/monorepo-ts) with additions for react development supplied by me, [Jeff Wainwright](https://github.com/yowainwright).
 
 
