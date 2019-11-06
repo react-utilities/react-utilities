@@ -29,31 +29,19 @@ Listed below are steps and commands for developing new React Utilities or fixing
 
 Commands for developing React Utilities
 
-#### `build`
-
-Builds all packages in parallel
-
-#### `clean`
-
-Cleans up all build files for all packages
-
-#### `ci`
-
-Shortcut command to run CI-friendly conformance checks for `lint`, `typescript` checks, and `test`s.
-
-#### `lint`
-
-Runs lint and auto-fixes code if necessary.
-
-#### `test`
-
-Runs all tests.
-
-Shortcut for `jest`. You can pass any `jest` CLI flags to this command like `--watch`
-
-#### `tsc`
-
-Runs a `noEmit` Typescript check across all files.
+* #### `build`
+  * Builds all packages in parallel
+* #### `clean`
+  * Cleans up all build files for all packages
+* #### `ci`
+  * Shortcut command to run CI-friendly conformance checks for `lint`, `typescript` checks, and `test`s.
+* #### `lint`
+  * Runs lint and auto-fixes code if necessary.
+* #### `test`
+  * Runs all tests.
+  * Shortcut for `jest`. You can pass any `jest` CLI flags to this command like `--watch`
+* #### `tsc`
+  * Runs a `noEmit` Typescript check across all files.
 
 ----
 
