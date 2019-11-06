@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "src/*"
+    "packages/*"
   ],
   "scripts": {
     "prebuild": "yarnpkg clean",
