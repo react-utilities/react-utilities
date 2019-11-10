@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "React utilities for more easily writing React Apps",
   "main": "index.ts",
-  "repository": "git@github.com:paularmstrong/react-utilities.git",
+  "repository": "git@github.com:yowainwright/react-utilities.git",
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
   "license": "MIT",
   "private": true,
@@ -51,7 +51,7 @@
     "react-test-renderer": "^16.9.0",
     "semantic-release": "^15.13.19",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.1"
+    "typescript": "^3.7.0"
   },
   "dependencies": {
     "react": "^16.11.0",
