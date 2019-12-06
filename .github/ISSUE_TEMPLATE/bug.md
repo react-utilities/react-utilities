@@ -9,8 +9,8 @@ A short explanation of your problem or use-case is helpful!
 
 **Steps to Reproduce:**
 
-1. 2.
-
+1. 
+2. 
 3. ...
 
 **Expected Result**
