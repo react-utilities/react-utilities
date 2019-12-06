@@ -1,5 +1,5 @@
 <!--
-Thank you so much for contributing to open source and the TS Monorepo project!
+Thank you so much for contributing!
 -->
 
 # Problem

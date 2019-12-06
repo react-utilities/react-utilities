@@ -13,7 +13,7 @@ When trying to solve more solutions with Build Tracker, please keep in mind some
 
 # Problem
 
-Explain the problem you'd like to have the TS Monorepo git template solve.
+Explain the problem you'd like to have solved.
 
 # Solution
 
