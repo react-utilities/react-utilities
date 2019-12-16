@@ -1,6 +1,6 @@
 {
   "name": "@react-utilities/react-width-detector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Detects an elements width using React Context",
   "author": "Jeffry Wainwright <yowainwright@gmail.com>",
   "repository": "git@github.com/yowainwright/react-utilities.git",
