@@ -1,0 +1,11 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/react-vertical-scroll-distance-detector/package.json",
+        "packages/react-width-detector/package.json"
+      ]
+    }
+  }
+}
