@@ -19,20 +19,19 @@ save_cache: &save_cache
 
 version: 2
 jobs:
-  test-build:
+  test-updates:
     <<: *defaults
     steps:
       - checkout
       - run: yarn
       - *restore_cache
       - run: yarn
-      - run: yarn lint
+      - run: yarn lint:ci
       - run: yarn build
-      - run: yarn test
       - *save_cache
 
 workflows:
   version: 2
   commit:
     jobs:
-      - test-build
+      - test-updates
