@@ -1,6 +1,6 @@
 # React Utilities
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/yowainwright/react-utilities.svg)](https://greenkeeper.io/)
+
 
 React Utilities to speed up and simplify development 🏎
 
