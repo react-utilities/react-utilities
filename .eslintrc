@@ -30,10 +30,13 @@
      */
     "import/export": "off",
     "import/prefer-default-export": "off", // Allow single Named-export
-    "no-unused-expressions": ["warn", {
-      "allowShortCircuit": true,
-      "allowTernary": true
-    }], // https://eslint.org/docs/rules/no-unused-expressions
+    "no-unused-expressions": [
+      "warn",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ], // https://eslint.org/docs/rules/no-unused-expressions
 
     /**
      * @description rules of @typescript-eslint
@@ -44,21 +47,21 @@
     /**
      * @description rules of eslint-plugin-react
      */
-    "react/jsx-filename-extension": ["warn", {
-      "extensions": [".jsx", ".tsx"]
-    }], // also want to use with ".tsx"
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ], // also want to use with ".tsx"
     "react/prop-types": "off", // Is this incompatible with TS props type?
 
     /**
      * @description rules of eslint-plugin-react-hooks
      */
     "react-hooks/rules-of-hooks": "error",
-
-    /**
-     * @description rules of eslint-plugin-prettier
-     */
     "prettier/prettier": [
-      "error", {
+      "error",
+      {
         "singleQuote": true,
         "semi": false
       }

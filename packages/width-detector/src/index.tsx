@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  FunctionComponent,
-  ReactChild,
-  useEffect,
-  useState
-} from 'react'
+import React, { createContext, FunctionComponent, ReactChild, useEffect, useState } from 'react'
 import debounce from 'lodash.debounce'
 
 /**
@@ -28,14 +22,9 @@ export interface WidthProviderProps {
 
 const { Provider, Consumer } = createContext<Context>({ width: 0 })
 
-export const WidthProvider: FunctionComponent<WidthProviderProps> = ({
-  children,
-  singleElement
-}): JSX.Element => {
+export const WidthProvider: FunctionComponent<WidthProviderProps> = ({ children, singleElement }): JSX.Element => {
   const [width, setWidth] = useState(0)
-  const el: any = singleElement
-    ? document.querySelectorAll(singleElement)[0]
-    : window
+  const el: any = singleElement ? document.querySelectorAll(singleElement)[0] : window
   const elWidth = el !== window ? el.offsetWidth : el.innerWidth
   useEffect(() => {
     const handleResize = () => setWidth(elWidth)
