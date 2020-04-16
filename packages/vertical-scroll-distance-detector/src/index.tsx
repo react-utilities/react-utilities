@@ -1,10 +1,5 @@
 import debounce from 'lodash.debounce'
-import React, {
-  createContext,
-  FunctionComponent,
-  useEffect,
-  useState
-} from 'react'
+import * as React from 'react'
 
 /**
  * React Vertical Scroll Distance Detector
@@ -25,18 +20,17 @@ export interface VerticalScrollDistanceProviderProps {
   singleElement?: string | null | undefined
 }
 
-const { Provider, Consumer } = createContext<Context>({
-  verticalScrollDistance: 0
+const { Provider, Consumer } = React.createContext<Context>({
+  verticalScrollDistance: 0,
 })
 
-export const VerticalScrollDistanceProvider: FunctionComponent<
-  VerticalScrollDistanceProviderProps
-> = ({ children, singleElement }) => {
-  const [verticalScrollDistance, setVerticalScrollDistance] = useState(0)
-  const el = singleElement
-    ? document.querySelectorAll(singleElement)[0]
-    : window
-  useEffect(() => {
+export const VerticalScrollDistanceProvider: React.FunctionComponent<VerticalScrollDistanceProviderProps> = ({
+  children,
+  singleElement,
+}) => {
+  const [verticalScrollDistance, setVerticalScrollDistance] = React.useState(0)
+  const el = singleElement ? document.querySelectorAll(singleElement)[0] : window
+  React.useEffect(() => {
     const handleScroll = () => setVerticalScrollDistance(window.scrollY)
     handleScroll()
     el.addEventListener('scroll', debounce(handleScroll))

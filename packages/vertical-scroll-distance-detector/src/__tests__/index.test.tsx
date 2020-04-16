@@ -1,7 +1,4 @@
-import {
-  VerticalScrollDistanceProvider,
-  VerticalScrollDistanceConsumer
-} from '..'
+import { VerticalScrollDistanceProvider } from '../index'
 // import { MockScrollDistanceImplementation } from '../Mock'
 
 describe('VerticalScrollDistanceDetector', () => {

@@ -1,4 +1,4 @@
-import { WidthProvider, WidthConsumer } from '..'
+import { WidthProvider } from '../index'
 
 describe('WidthDetector', () => {
   it('WidthProvider', () => {

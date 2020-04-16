@@ -11,19 +11,38 @@
     "packages/*"
   ],
   "scripts": {
-    "prebuild": "yarnpkg clean",
-    "build": "lerna run build --stream --parallel",
-    "clean": "lerna run clean --stream --parallel",
+    "bootstrap": "lerna bootstrap --hoist --strict --force-local",
+    "build": "lerna exec --no-bail --stream yarn build",
+    "chore:delete-publish-branch": "if git show-ref --quiet refs/heads/chore-publish; then git branch -D chore-publish; fi",
+    "chore:branch": "git checkout -b chore-publish",
+    "chore:build-docs": "lern exec --parallel yarn build:docs",
+    "chore:setup-next-work": "git checkout master && yarn chore:delete-publish-branch",
+    "chore:pr": "git add . && git commit -m '[chore] publish docs' --no-verify && git push origin chore-publish -f",
+    "chore:setup-publish": "git checkout master && git pull",
+    "chore": "yarn chore:branch && yarn chore:build-docs && yarn chore:pr && yarn chore:setup-next-work",
+    "commit": "git-cz",
+    "commit:retry": "git-cz --retry",
+    "commitmsg": "commitlint -e",
     "ci": "run-s lint:ci tsc test:ci",
+    "clean": "lerna run clean --stream --parallel",
+    "deploy": "lerna publish from-package --ignore-scripts",
+    "deploy:all": "lerna publish --ignore-scripts",
     "lint": "yarn lint:cmd --fix",
     "lint:ci": "yarn lint:cmd",
     "lint:cmd": "eslint . --ext '.ts,.tsx,.js,.json,.md,.snap' --cache",
+    "load": "yarn load:root && yarn load:packages",
+    "load:packages": "lerna exec --parallel yarn",
+    "load:root": "yarn",
+    "prebuild": "yarnpkg clean",
     "test": "yarn test:cmd",
     "test:ci": "yarn test:cmd --ci",
     "test:cmd": "jest",
     "tsc": "tsc -p ./tsconfig.test.json"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-lerna-scopes": "^8.3.4",
+    "@commitlint/prompt": "^8.3.5",
     "@testing-library/react": "^9.3.2",
     "@types/jest": "^25.1.1",
     "@types/react": "^16.8.24",
@@ -31,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "commitizen": "^4.0.3",
+    "conventional-changelog-cli": "^2.0.31",
     "enzyme": "^3.10.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -57,5 +77,69 @@
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.8.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/@commitlint/prompt"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-lerna-scopes"
+    ],
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        120
+      ],
+      "scope-enum": [
+        2,
+        "always",
+        [
+          "root",
+          "vertical-scroll-distance-detectore",
+          "width-detector"
+        ]
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "chore",
+          "feat",
+          "fix",
+          "docs",
+          "style",
+          "refactor",
+          "test",
+          "release",
+          "revert"
+        ]
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "post-checkout": "if [[ $HUSKY_GIT_PARAMS =~ 1$ ]]; then yarn; fi",
+      "post-merge": "yarn",
+      "post-rewrite": "yarn",
+      "pre-commit": "yarn tsc && lint-staged"
+    }
+  },
+  "jest": {
+    "projects": [
+      "<rootDir>/packages/*"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md}": [
+      "yarn lint",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "jest --bail --findRelatedTests"
+    ]
   }
 }

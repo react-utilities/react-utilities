@@ -20,5 +20,17 @@
     "lodash.debounce": "^4.0.8",
     "react": "^16.11.0",
     "react-dom": "^16.8.6"
+  },
+  "jest": {
+    "displayName": "width-detector",
+    "testEnvironment": "node",
+    "resetMocks": true,
+    "rootDir": "./",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
   }
 }
