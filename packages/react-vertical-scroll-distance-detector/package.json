@@ -1,12 +1,13 @@
 {
-  "name": "@react-utilities/react-vertical-scroll-distance-detector",
-  "version": "0.0.2",
+  "name": "@react-utilities/vertical-scroll-distance-detector",
+  "version": "0.0.3",
   "description": "Detects vertical scroll distance using React Context",
   "author": "Jeffry Wainwright <yowainwright@gmail.com>",
   "repository": "git@github.com/yowainwright/react-utilities.git",
   "license": "MIT",
-  "main": "dist",
-  "types": "index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
