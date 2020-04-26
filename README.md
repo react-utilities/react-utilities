@@ -1,15 +1,15 @@
-# React Utilities
+# React Utilities 🏎💨
 
-React Utilities to speed up and simplify React development 🏎💨
+Utilities for React to speed up and simplify development
 
 ---
 
-The goal of the project is to provide everyday components<br />
-to speed up and simplify React development with little to no extra boilerplate code.
+This project provides everyday components<br />
+for speeding up and simplifying React development with little to no extra boilerplate code.
 
-In this eco-system/monorepo, everyday React utilities can be implemented<br />
-and tested so that users of this repository's utilities can use the <br />
-provided utilities with confidence and without much thought.
+- In this eco-system/monorepo, everyday React utilities are implemented and tested
+- A pattern of utility and recipe is established for easy implementation and development
+- This means users can use install **React Utilities** with confidence and without thought
 
 ---
 
@@ -20,29 +20,17 @@ provided utilities with confidence and without much thought.
 | [@react-utilities/vertical-scroll-distance-detector](/packages/vertical-scroll-distance-detector) | checks the vertical scroll distance |
 | [@react-utilities/width-detector](/packages/width-detector)                                       | checks the width                    |
 
-## Install
+## Glossary
 
-```sh
+Below are sectioned descriptions and usages of each implemented React Utility.
 
-yarn add @react-utilities/some-react-utility
+### [Vertical-scroll-distance-detector](/packages/vertical-scroll-distance-detector)
 
-```
+Detects the vertical scroll distance of window or an element.
 
-## Usage
+### [Width-detector](/packages/width-detector)
 
-In this section, how to use specific React Utilities will be supplied.
-
-### Example
-
-```typescript
-import { SomeReactUtility } from '@react-utilities/some-react-utility'
-
-const SomeReactComponent: FunctionComponent<SomeReactComponentProps> = (): JSX.Element => (
-  <SomeReactUtility>
-    <p>Foo</p>
-  </SomeReactUtility>
-)
-```
+Detects the width of the window or an element.
 
 ---
 

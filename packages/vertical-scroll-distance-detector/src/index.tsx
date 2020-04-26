@@ -7,7 +7,7 @@ import * as React from 'react'
  * select element or use default window
  * get the scroll distance of the selected element
  * @param {child} react child element
- * @param {singleElement} string that is selected via `querySelectorAll`
+ * @param {selector} string that is selected via `querySelectorAll`
  * @returns {reactElement}
  */
 
@@ -16,8 +16,8 @@ export interface Context {
 }
 
 export interface VerticalScrollDistanceProviderProps {
-  children: any
-  singleElement?: string | null | undefined
+  children: React.ReactChild | string
+  selector?: string | undefined
 }
 
 const { Provider, Consumer } = React.createContext<Context>({
@@ -26,10 +26,10 @@ const { Provider, Consumer } = React.createContext<Context>({
 
 export const VerticalScrollDistanceProvider: React.FunctionComponent<VerticalScrollDistanceProviderProps> = ({
   children,
-  singleElement,
+  selector,
 }) => {
   const [verticalScrollDistance, setVerticalScrollDistance] = React.useState(0)
-  const el = singleElement ? document.querySelectorAll(singleElement)[0] : window
+  const el = selector ? document.querySelectorAll(selector)[0] : window
   React.useEffect(() => {
     const handleScroll = () => setVerticalScrollDistance(window.scrollY)
     handleScroll()
