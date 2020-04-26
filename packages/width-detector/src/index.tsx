@@ -7,7 +7,7 @@ import debounce from 'lodash.debounce'
  * select element or use default window
  * get the width of an element or window
  * @param {child} react child element
- * @param {singleElement} string that is selected via `querySelectorAll`
+ * @param {selector} string that is selected via `querySelectorAll`
  * @returns {reactElement}
  */
 
@@ -17,14 +17,14 @@ export interface Context {
 
 export interface WidthProviderProps {
   children: (props: any) => ReactChild
-  singleElement?: string | null | undefined
+  selector?: string | undefined
 }
 
 const { Provider, Consumer } = createContext<Context>({ width: 0 })
 
-export const WidthProvider: FunctionComponent<WidthProviderProps> = ({ children, singleElement }): JSX.Element => {
+export const WidthProvider: FunctionComponent<WidthProviderProps> = ({ children, selector }): JSX.Element => {
   const [width, setWidth] = useState(0)
-  const el: any = singleElement ? document.querySelectorAll(singleElement)[0] : window
+  const el: any = selector ? document.querySelectorAll(selector)[0] : window
   const elWidth = el !== window ? el.offsetWidth : el.innerWidth
   useEffect(() => {
     const handleResize = () => setWidth(elWidth)
