@@ -42,7 +42,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-lerna-scopes": "^10.0.0",
-    "@commitlint/prompt": "^8.3.5",
+    "@commitlint/prompt": "^11.0.0",
     "@testing-library/react": "^10.0.3",
     "@types/jest": "^26.0.14",
     "@types/react": "^16.8.24",
