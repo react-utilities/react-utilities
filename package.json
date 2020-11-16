@@ -11,7 +11,6 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist --strict --force-local",
     "build": "lerna exec --no-bail --stream yarn build",
     "chore:delete-publish-branch": "if git show-ref --quiet refs/heads/chore-publish; then git branch -D chore-publish; fi",
     "chore:branch": "git checkout -b chore-publish",
@@ -31,11 +30,9 @@
     "lint:ci": "yarn lint:cmd",
     "lint:cmd": "eslint . --ext '.ts,.tsx,.js,.json,.md,.snap' --cache",
     "load": "yarn load:root && yarn load:packages",
-    "load:packages": "lerna exec --parallel yarn",
-    "load:root": "yarn",
     "prebuild": "yarnpkg clean",
-    "test": "yarn test:cmd",
-    "test:ci": "yarn test:cmd --ci",
+    "test": "yarn test:cmd && yarn tsc",
+    "test:ci": "yarn test:cmd --ci && yarn tsc",
     "test:cmd": "jest",
     "tsc": "tsc -p ./tsconfig.test.json"
   },
@@ -133,5 +130,6 @@
     "*.{ts,tsx}": [
       "jest --bail --findRelatedTests"
     ]
-  }
+  },
+  "prettier": "@heartly/eslint-config-typescript/dist/prettier"
 }

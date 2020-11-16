@@ -1,5 +1,8 @@
 # React Utilities 🏎💨
 
+![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
 > Utilities for React to speed up and simplify development
 
 This project provides everyday components for speeding up and simplifying React development with little or no extra boilerplate code

@@ -1,13 +1,11 @@
-# @react-utilities/react-width-detector 🏎💨
+# @react-utilities/width-detector 🏎💨
 
-Detects the distance that an element has been scrolled.
+Detects an element's width using React Context"
 
 ## Install
 
-To install, run either of the commands below.
-
 ```sh
 
-yarn add @react-utilities/react-width-detector
+yarn add @react-utilities/width-detector
 
 ```
