@@ -1,5 +1,8 @@
 {
   "extends": "@heartly/eslint-config-typescript",
+  "rules": {
+    "react/prop-types": [0]
+  },
   "globals": {
     "describe": true,
     "expect": true,
