@@ -37,7 +37,7 @@
     "commitizen": "^4.0.3",
     "conventional-changelog-cli": "^2.0.31",
     "enzyme": "^3.10.0",
-    "eslint": "^6.6.0",
+    "eslint": "^7.16.0",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
     "lerna": "^3.14.1",
