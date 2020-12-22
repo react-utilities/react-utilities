@@ -49,7 +49,7 @@
     "typescript": "^3.7.0"
   },
   "dependencies": {
-    "react": "^16.11.0",
+    "react": "^17.0.1",
     "react-dom": "^16.8.6"
   },
   "config": {
