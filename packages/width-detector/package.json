@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
-    "react": "^16.11.0",
+    "react": "^17.0.1",
     "react-dom": "^16.8.6"
   },
   "jest": {
