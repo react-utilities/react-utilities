@@ -16,7 +16,7 @@ export type WidthContext = {
 
 export type WidthProviderProps = {
   children: (props: ReactChild) => ReactChild
-  delay: number
+  delay?: number
   selector?: string | Window | undefined
 }
 

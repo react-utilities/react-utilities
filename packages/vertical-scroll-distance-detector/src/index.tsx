@@ -16,7 +16,7 @@ export interface Context {
 
 export interface VerticalScrollDistanceProviderProps {
   children: React.ReactChild | string
-  delay: number
+  delay?: number
   selector?: string | undefined
 }
 
