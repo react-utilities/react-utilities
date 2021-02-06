@@ -23,6 +23,7 @@ importers:
       react-test-renderer: 17.0.1_react@17.0.1
       ts-jest: 25.5.1_jest@25.5.4+typescript@3.9.7
       typescript: 3.9.7
+      yarnhook: 0.5.1
     specifiers:
       '@commitlint/cli': ^11.0.0
       '@commitlint/config-lerna-scopes': ^10.0.0
@@ -45,6 +46,7 @@ importers:
       react-test-renderer: ^17.0.1
       ts-jest: ^25.1.0
       typescript: ^3.7.0
+      yarnhook: ^0.5.1
   packages/vertical-scroll-distance-detector:
     dependencies:
       react: 17.0.1
@@ -2797,6 +2799,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8MWIBRgJi/WpjjfVXumjPKCtmQ10B+fjx6zmSA+770GMJirLhWIzg8l763rhjl9xaeaHbnxPNRQKq2mgMhr+aw==
+  /find-parent-dir/0.3.0:
+    dev: true
+    resolution:
+      integrity: sha1-M8RLQpqysvBkYpnF+fcY83b/jVQ=
   /find-root/1.1.0:
     dev: true
     resolution:
@@ -7015,6 +7021,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
+  /yarnhook/0.5.1:
+    dependencies:
+      execa: 4.1.0
+      find-parent-dir: 0.3.0
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-YPLLXO/PzsFXKvRfsOG/r60WBz8RT7VbkkQv2oHDb6o+EjX0vcUSeA3aw5el2AEWjbcg1sgemjHyCwRIvQxZWw==
   /yocto-queue/0.1.0:
     dev: true
     engines:
