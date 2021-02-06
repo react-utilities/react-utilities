@@ -11,17 +11,12 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna exec --no-bail --stream yarn build",
-    "ci": "run-s lint:ci tsc test:ci",
-    "clean": "lerna clean",
-    "deploy": "lerna publish from-package --ignore-scripts",
-    "deploy:all": "lerna publish --ignore-scripts",
-    "lint": "yarn lint:cmd --fix",
-    "lint:ci": "yarn lint:cmd",
-    "lint:cmd": "eslint . --ext '.ts,.tsx,.js,.json,.md,.snap' --cache",
-    "test": "yarn test:cmd && yarn tsc",
-    "test:ci": "yarn test:cmd --ci && yarn tsc",
-    "test:cmd": "jest",
+    "build": "pnpm -r clean && pnpm -r build",
+    "deploy": "pnpm -r publish",
+    "lint:ci": "eslint . --ext '.ts,.tsx,.js,.json,.md,.snap' --cache --fix",
+    "lint": "eslint . --ext '.ts,.tsx,.js,.json,.md,.snap' --cache --fix",
+    "preinstall": "npx only-allow pnpm",
+    "test": "jest",
     "tsc": "tsc -p ./tsconfig.test.json"
   },
   "devDependencies": {
@@ -35,18 +30,16 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "commitizen": "^4.0.3",
-    "conventional-changelog-cli": "^2.0.31",
-    "enzyme": "^3.10.0",
     "eslint": "^7.16.0",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
-    "lerna": "^3.14.1",
     "lint-staged": "^10.0.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "react-test-renderer": "^17.0.1",
     "ts-jest": "^25.1.0",
-    "typescript": "^3.7.0"
+    "typescript": "^3.7.0",
+    "yarnhook": "^0.5.1"
   },
   "dependencies": {
     "react": "^17.0.1",
@@ -96,10 +89,10 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "post-checkout": "if [[ $HUSKY_GIT_PARAMS =~ 1$ ]]; then yarn; fi",
-      "post-merge": "yarn",
-      "post-rewrite": "yarn",
-      "pre-commit": "yarn tsc && lint-staged"
+      "post-checkout": "if [[ $HUSKY_GIT_PARAMS =~ 1$ ]]; then yarnhook; fi",
+      "post-merge": "yarnhook",
+      "post-rewrite": "yarnhook",
+      "pre-commit": "pnpm run tsc && lint-staged"
     }
   },
   "jest": {
@@ -109,12 +102,14 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md}": [
-      "yarn lint",
-      "git add"
+      "pnpm run lint"
     ],
     "*.{ts,tsx}": [
       "jest --bail --findRelatedTests"
     ]
   },
-  "prettier": "@heartly/eslint-config-typescript/dist/prettier"
+  "prettier": "@heartly/eslint-config-typescript/dist/prettier",
+  "engines": {
+    "pnpm": ">=5"
+  }
 }
