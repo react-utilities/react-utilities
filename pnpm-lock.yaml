@@ -47,20 +47,16 @@ importers:
       typescript: ^3.7.0
   packages/vertical-scroll-distance-detector:
     dependencies:
-      lodash.debounce: 4.0.8
       react: 17.0.1
       react-dom: 17.0.1_react@17.0.1
     specifiers:
-      lodash.debounce: ^4.0.8
       react: ^17.0.1
       react-dom: ^17.0.1
   packages/width-detector:
     dependencies:
-      lodash.debounce: 4.0.8
       react: 17.0.1
       react-dom: 17.0.1_react@17.0.1
     specifiers:
-      lodash.debounce: ^4.0.8
       react: ^17.0.1
       react-dom: ^17.0.1
 lockfileVersion: 5.2
@@ -4479,10 +4475,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
-  /lodash.debounce/4.0.8:
-    dev: false
-    resolution:
-      integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=
   /lodash.kebabcase/4.1.1:
     dev: true
     resolution:

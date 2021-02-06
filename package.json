@@ -11,7 +11,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "pnpm -r build",
+    "build": "pnpm -r clean && pnpm -r build",
     "deploy": "pnpm -r publish",
     "lint:ci": "eslint . --ext '.ts,.tsx,.js,.json,.md,.snap' --cache --fix",
     "lint": "eslint . --ext '.ts,.tsx,.js,.json,.md,.snap' --cache --fix",
