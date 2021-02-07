@@ -1,2 +1,3 @@
   - packages/*
   - "!**/__tests__/**"
+  - "!config/package/**"

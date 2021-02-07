@@ -1,0 +1,35 @@
+{
+  "name": "@react-utilities/<package>",
+  "version": "0.0.4",
+  "description": "<description>",
+  "author": "<author>",
+  "repository": "git@github.com/react-utilities/react-utilities.git",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "tsc": "tsc --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "jest": {
+    "displayName": "@react-utilities/<package>",
+    "testEnvironment": "node",
+    "resetMocks": true,
+    "rootDir": "./",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  }
+}
