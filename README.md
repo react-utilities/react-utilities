@@ -22,15 +22,15 @@ Everyday components for speeding up React development with little or no extra bo
 
 There are several ways to approach building utilities for React. 
 
-#### Simplicity ✅
+### Simplicity
 
 React Utilities focuses on **simplicity**. It has 1 dependency—React! It is a monorepo providing an echo system to quickly develop and test React utilities to be shared without the worry of code bloat because when it comes to installing your component, you're only importing **a component** and a little boilerplate from compilation. 
 
-#### *Tested ✅ 
+### *Tested
 
 Furthermore, because tests are written for each component in React Utilities, you don't have to write tests. Basically, React Utilities aims to be the React code **you could write** but won't now that you can import a React Utility from this library without worry. 
 
-*Tests coming soonish!
+#### *Tests coming soonish!
 
 ---
 ## Cites 🙏
