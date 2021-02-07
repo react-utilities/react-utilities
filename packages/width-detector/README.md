@@ -19,7 +19,10 @@ pnpm install @react-utilities/width-detector
 
 ```typescript
 import React from 'react'
-import { WidthConsumer, WidthProvider } from '@react-utilities/width-detector'
+import { 
+  WidthConsumer, 
+  WidthProvider,
+} from '@react-utilities/width-detector'
 
 function App() {
   return (
@@ -27,10 +30,13 @@ function App() {
       <WindowWidthProvider>
         <WindowWidthConsumer>
           {({ windowWidth }) => (
-            <div className="window-width-tracker">{windowWidth}</div>
+            <div className="window-width-tracker">
+              {windowWidth}
+            </div>
           )}
         </WindowWidthConsumer>
       </WindowWidthProvider>
+    </div>
   )
 }
 ```
@@ -39,8 +45,7 @@ function App() {
 
 ## Demo
 
-- [Code Sand Box](https://codesandbox.io/s/react-context-window-width-detector-51od7)
-- [CodePen]()
+- [Width Detector Demo](https://codesandbox.io/s/react-context-window-width-detector-51od7)
 
 ---
 

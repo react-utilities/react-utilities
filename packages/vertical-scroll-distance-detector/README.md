@@ -19,7 +19,10 @@ pnpm install @react-utilities/vertical-scroll-distance-detector
 
 ```typescript
 import React from 'react'
-import { VerticalScrollDistanceConsumer, VerticalScrollDistanceProvider } from '@react-utilities/vertical-scroll-distance-detector'
+import { 
+  VerticalScrollDistanceConsumer, 
+  VerticalScrollDistanceProvider,
+} from '@react-utilities/vertical-scroll-distance-detector'
 
 function App() {
   return (
@@ -28,12 +31,14 @@ function App() {
       <VerticalScrollDistanceProvider>
         <VerticalScrollDistanceConsumer>
           {({ verticalScrollDistance }) => (
-            <div className="scroll-tracker">{verticalScrollDistance}</div>
+            <div className="scroll-tracker">
+              {verticalScrollDistance}
+            </div>
           )}
         </VerticalScrollDistanceConsumer>
       </VerticalScrollDistanceProvider>
     </div>
-  );
+  )
 }
 ```
 
@@ -41,7 +46,7 @@ function App() {
 
 ## Demo
 
-- [Code Sand Box](https://codesandbox.io/s/react-context-vertical-scroll-distance-detector-lgtui)
+- [Vertical Scroll Distance Detector Demo](https://codesandbox.io/s/react-context-vertical-scroll-distance-detector-lgtui)
 
 ---
 
