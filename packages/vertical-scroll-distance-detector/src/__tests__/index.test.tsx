@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import {
   useVerticalScrollDistance,
@@ -20,7 +20,7 @@ describe('VerticalScrollDistanceDetector', () => {
     it('renders a default value of 0', () => {
       render(
         <VerticalScrollDistanceConsumer>
-          {(verticalScrollDistance) => <div className='scroll-tracker'>{verticalScrollDistance}</div>}
+          {(verticalScrollDistance): JSX.Element => <div className='scroll-tracker'>{verticalScrollDistance}</div>}
         </VerticalScrollDistanceConsumer>,
       )
       expect(screen.getByText(/^0/)).toHaveTextContent('0')
@@ -28,7 +28,7 @@ describe('VerticalScrollDistanceDetector', () => {
   })
 
   describe('useVerticalScrollDistance', () => {
-    const Result = () => {
+    const Result = (): JSX.Element => {
       const result = useVerticalScrollDistance()
       return <div>{result}</div>
     }
@@ -54,7 +54,7 @@ describe('VerticalScrollDistanceDetector', () => {
   })
 
   describe('VerticalScrollDistanceConsumer', () => {
-    const customRender = (ui, { scrollPosition, ...renderOptions }) => {
+    const customRender = (ui, { scrollPosition, ...renderOptions }: unknown): unknown => {
       return render(
         <VerticalScrollDistanceContext.Provider value={scrollPosition}>{ui}</VerticalScrollDistanceContext.Provider>,
         renderOptions,
@@ -63,7 +63,7 @@ describe('VerticalScrollDistanceDetector', () => {
     it('returns children with updated scroll distance', () => {
       customRender(
         <VerticalScrollDistanceConsumer>
-          {(verticalScrollDistance) => <div className='scroll-tracker'>{verticalScrollDistance}</div>}
+          {(verticalScrollDistance): JSX.Element => <div className='scroll-tracker'>{verticalScrollDistance}</div>}
         </VerticalScrollDistanceConsumer>,
         { scrollPosition: 100 },
       )

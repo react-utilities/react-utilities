@@ -82,4 +82,4 @@ export const useVerticalScrollDistance = (): number => {
  * VerticalScrollDistanceConsumer
  * @description provides fallback support for pre-hooks
  */
-export const VerticalScrollDistanceConsumer: React.Consumer<number> | any = VerticalScrollDistanceContext.Consumer
+export const VerticalScrollDistanceConsumer: React.Consumer<number> = VerticalScrollDistanceContext.Consumer
