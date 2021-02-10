@@ -15,7 +15,7 @@ export interface Context {
 }
 
 export interface VerticalScrollDistanceProviderProps {
-  children?: React.ReactChild | string
+  children?: (string | Element)[] | any
   delay?: number
   selector?: string | undefined
 }
@@ -62,7 +62,6 @@ export const VerticalScrollDistanceProvider: FunctionComponent<VerticalScrollDis
     el.addEventListener('scroll', debounce(handleScroll, delay))
     return (): void => el.removeEventListener('scroll', debounce(handleScroll, delay))
   }, [debounce])
-
   return (
     <VerticalScrollDistanceContext.Provider value={verticalScrollDistance}>
       {children}
@@ -83,4 +82,4 @@ export const useVerticalScrollDistance = (): number => {
  * VerticalScrollDistanceConsumer
  * @description provides fallback support for pre-hooks
  */
-export const VerticalScrollDistanceConsumer: React.Consumer<number> = VerticalScrollDistanceContext.Consumer
+export const VerticalScrollDistanceConsumer: React.Consumer<number> | any = VerticalScrollDistanceContext.Consumer

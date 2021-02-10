@@ -75,7 +75,7 @@
         "always",
         [
           "root",
-          "vertical-scroll-distance-detectore",
+          "vertical-scroll-distance-detector",
           "width-detector"
         ]
       ],
