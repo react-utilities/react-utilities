@@ -16,9 +16,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
+  "devDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0"
   },
   "jest": {
     "displayName": "@react-utilities/width-detector",
