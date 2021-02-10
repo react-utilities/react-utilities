@@ -9,13 +9,6 @@ import {
 } from '../index'
 
 describe('VerticalScrollDistanceDetector', () => {
-  describe('confirm functions exist', () => {
-    it('VerticalScrollDistanceProvider exists', () => expect(VerticalScrollDistanceProvider).toBeDefined())
-    it('VerticalScrollDistanceConsumer exists', () => expect(VerticalScrollDistanceContext).toBeDefined())
-    it('useVerticalScrollDistance exists', () => expect(useVerticalScrollDistance).toBeDefined())
-    it('VerticalScrollDistanceConsumer exists', () => expect(VerticalScrollDistanceConsumer).toBeDefined())
-  })
-
   describe('VerticalScrollDistanceConsumer', () => {
     it('renders a default value of 0', () => {
       render(

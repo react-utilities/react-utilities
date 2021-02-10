@@ -55,7 +55,7 @@ export const VerticalScrollDistanceProvider: FunctionComponent<VerticalScrollDis
   selector,
 }) => {
   const [verticalScrollDistance, setVerticalScrollDistance] = useState(0)
-  const el = selector ? document.querySelectorAll(selector)[0] : window
+  const el = selector ? document.querySelector(selector) : window
   useEffect(() => {
     const handleScroll = (): void => setVerticalScrollDistance(window.scrollY)
     handleScroll()
