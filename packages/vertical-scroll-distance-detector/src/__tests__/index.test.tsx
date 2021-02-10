@@ -1,8 +1,15 @@
-import { VerticalScrollDistanceProvider } from '../index'
-// import { MockScrollDistanceImplementation } from '../Mock'
+import {
+  useVerticalScrollDistance,
+  VerticalScrollDistanceProvider,
+  VerticalScrollDistanceContext,
+  VerticalScrollDistanceConsumer,
+} from '../index'
 
 describe('VerticalScrollDistanceDetector', () => {
-  it('VerticalScrollDistanceProvider', () => {
-    expect(typeof VerticalScrollDistanceProvider).toBe('function')
+  describe('initial setup', () => {
+    it('VerticalScrollDistanceProvider exists', () => expect(VerticalScrollDistanceProvider).toBeDefined())
+    it('VerticalScrollDistanceConsumer exists', () => expect(VerticalScrollDistanceContext).toBeDefined())
+    it('useVerticalScrollDistance exists', () => expect(useVerticalScrollDistance).toBeDefined())
+    it('VerticalScrollDistanceConsumer exists', () => expect(VerticalScrollDistanceConsumer).toBeDefined())
   })
 })
