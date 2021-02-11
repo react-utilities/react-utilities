@@ -1,6 +1,3 @@
-import * as React from 'react'
-import { Foo } from '../index'
-
 describe('<package>', () => {
-  test('Foo', () => {})
+  test('1 is 1', () => expect(1).toBe(1))
 })

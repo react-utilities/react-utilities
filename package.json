@@ -112,7 +112,7 @@
       "<rootDir>/packages/*"
     ],
     "testPathIgnorePatterns" : [
-      "<rootDir>/config/package/" 
+      "<rootDir>/config/"
     ]
   },
   "lint-staged": {
@@ -126,6 +126,5 @@
   "prettier": "@heartly/eslint-config-typescript/dist/prettier",
   "engines": {
     "pnpm": ">=5"
-  },
-  "dependencies": {}
+  }
 }
