@@ -47,7 +47,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-test-renderer": "^17.0.1",
+    "sade": "^1.7.4",
     "ts-jest": "^25.1.0",
+    "ts-node": "^9.1.1",
     "typescript": "^3.7.0",
     "yarnhook": "^0.5.1"
   },
@@ -108,6 +110,9 @@
   "jest": {
     "projects": [
       "<rootDir>/packages/*"
+    ],
+    "testPathIgnorePatterns" : [
+      "<rootDir>/config/"
     ]
   },
   "lint-staged": {
@@ -121,6 +126,5 @@
   "prettier": "@heartly/eslint-config-typescript/dist/prettier",
   "engines": {
     "pnpm": ">=5"
-  },
-  "dependencies": {}
+  }
 }
